@@ -1,0 +1,64 @@
+Ajay wants to buy a T-shirt. As he is very lazy, he decided to buy the T-shirt through online shopping. He chooses a T-shirt in Flipkart and surprised to see the same T-shirt also in Amazon and Snapdeal. So he decided to buy the T-shirt in which the price of the T-shirt is low. The price of the T-shirt, discount % and the shipping charges of all three websites have been given as input. Help in calculating the price of T-shirt in each website and help him to decide which website has low price.
+
+INPUT & OUTPUT FORMAT:
+
+Input consist of 9 integers.
+
+First three input corresponds to Flipkart details such as the amount of the shirt, discount offered and shipping charges.
+
+Next three input corresponds to Snapdeal details such as the amount of shirt, discount offered and shipping charge.
+
+Last three input corresponds to amazon details such as the amount of shirt, discount offered and shipping charge.
+
+
+
+Sample Input:
+
+1000
+50
+50
+900
+50
+70
+800
+10
+200
+
+Sample Output:
+
+In Flipkart Rs.550
+In Snapdeal Rs.520
+In Amazon Rs.920
+He will prefer Snapdeal
+
+solution:
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int s1,dp1,sh1,s2,dp2,sh2,s3,dp3,sh3,d1,d2,d3,t1,t2,t3;
+    cin >> s1 >> dp1 >> sh1 >> s2 >> dp2 >> sh2 >> s3 >> dp3 >> sh3;
+    d1=((dp1*s1)/100);
+    d2=((dp2*s2)/100);
+    d3=((dp3*s3)/100);
+    t1=(s1+sh1)-d1;
+    t2=(s2+sh2)-d2;
+    t3=(s3+sh3)-d3;
+    cout << "In Flipkart Rs."<<t1<<endl;
+    cout << "In Snapdeal Rs."<<t2<<endl;
+    cout << "In Amazon Rs."<<t3<<endl;
+    if(t1<t2&&t1<t3)
+    {
+        cout<<"He will prefer Flipkart";
+    }
+    else if(t2<t3&&t2<t1)
+    {
+        cout<<"He will prefer Snapdeal";
+    }
+    else if(t3<t1&&t3<t2)
+    {
+        cout<<"He will prefer Amazon";
+    }
+    return 0;
+}
