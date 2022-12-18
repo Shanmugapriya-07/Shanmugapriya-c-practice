@@ -1,0 +1,45 @@
+Write a program to find whether a given character is an upper,lower, number or symbols.
+
+
+INPUT & OUTPUT FORMAT:
+
+The input consists of a character.
+
+The output should be any one of the below-given strings.
+
+"Upper" or "Number" or "Symbol" or "Lower"
+
+
+Sample Input:
+
+A
+
+Sample Output:
+
+Upper
+solution:
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    char a;
+    cin >> a;
+    if(a>='0' && a<='9')
+    {
+        cout << "Number";
+    }
+    else if(a>='a' && a<='z')
+    {
+        cout << "Lower";
+    }
+    else if(a>='A' && a<='Z')
+    {
+        cout << "Upper";
+    }
+    else
+    {
+        cout << "Symbol";
+    }
+    return 0;
+}
