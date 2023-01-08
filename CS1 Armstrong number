@@ -1,0 +1,32 @@
+Write a C program to find whether the given number is Armstrong number or not.
+
+Note: 371 is an Armstrong number since 3^3+ 7^3 + 1^3 = 371.
+
+Sample Input:
+
+153
+
+Sample Output:
+
+Armstrong Number
+
+#include<iostream>
+#include<cmath>
+using namespace std;
+int main()
+{
+    int n,a,b,c,d;
+    cin>>n;
+    a=n/100;
+    b=a/10;
+    c=a%10;
+    d=pow(a,3)+pow(b,3)+pow(c,3);
+    if(n==d)
+    {
+        cout<<"Armstrong Number";
+    }
+    else
+    {
+        cout<<"Not an Armstrong Number";
+    }
+}
